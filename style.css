@@ -1,0 +1,116 @@
+body {
+    background-color: #A5415C;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+h1 {
+    font-size: 350px;
+    position: relative;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row; /* Align items horizontally */
+    align-items: flex-start; /* Align items to the top */
+    justify-content: center; /* Center items horizontally */
+    width: 100%; /* Full width container */
+}
+
+#text-box {
+    width: 70%; /* Adjust width to fit beside the image */
+    padding: 20px;
+    font-size: 24px;
+    line-height: 1.6;
+    background-color: #A5415C; /* Example background color */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Example box shadow */
+    margin: 20px; /* Adjust spacing */
+}
+
+#text-box.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+#toggleButton {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 30px;
+    color: black;
+    background-color: #594848;
+    border: 0.5px solid #000; /* Fixed typo */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%; /* Adjust width if necessary */
+    max-width: 300px; /* Adjust max-width as needed */
+    text-align: center; /* Center button text */
+}
+
+#toggleButton.dark-theme {
+    background-color: #fff;
+    color: #000;
+}
+
+#toggleButton:hover {
+    background-color: #3E2F2F;
+    transform: scale(1.05);
+}
+
+#toggleButton:active {
+    transform: scale(0.95);
+}
+
+#toggleButton.dark-theme:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+#carouselExample {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 780px; /* Set the fixed width */
+    height: 1280px; /* Set the fixed height */
+    position: relative;
+    overflow: hidden; /* Hide overflow */
+}
+
+.carousel-inner {
+    position: relative;
+    width: 95%; /* Slightly smaller than the container */
+    height: 95%; /* Slightly smaller than the container */
+}
+
+.normal, .sketch {
+    position: absolute; /* Position images absolutely */
+    top: 0;
+    left: 0;
+    height: 100%; /* Full height of the container */
+    width: 100%; /* Full width of the container */
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.normal img, .sketch img {
+    width: 60%; /* Slightly smaller than the container */
+    height: 60%; /* Slightly smaller than the container */
+    object-fit: cover; /* Ensure the image covers the container */
+    border-radius: 20px;
+}
+
+.normal.show, .sketch.show {
+    opacity: 1;
+}
